@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Textarea</h2>
+
+<p>Original Text</p>
+<textarea id="textInput" rows="7" cols="60" oninput = "processText()"></textarea>
+
+<p>Replace Target</p>
+<textarea id="replaceTarget" rows="3" cols="60"></textarea>
+
+<p>Replace With</p>
+<textarea id="replaceWith" rows="3" cols="60"></textarea>
+
+<br>
+<input type="button" onClick = "processText()" value = "replace">
+<p>Processed Text</p>
+
+<textarea id="textOutput" rows="7" cols="60"></textarea>
+
+</body>
+</html>
+
+<script>
+function processText() {
+  let textInput = document.getElementById("textInput").value;
+  let replaceTarget = document.getElementById("replaceTarget").value;
+  let replaceWith = document.getElementById("replaceWith").value;
+  let textOutput = textInput.replace(replaceTarget, replaceWith);
+  document.getElementById("textOutput").value = textOutput;
+}
+
+</script>
